@@ -2,9 +2,9 @@
 
 ## Project Description
 
-This project is a menu-based image processing application developed in the C programming language. The application works with grayscale PGM images and allows the user to load an image, apply different image processing operations, and save the processed result.
+This project is a menu-based image processing application developed in the C programming language. The application works with grayscale PGM images in ASCII P2 format and allows the user to load an image, apply different image processing operations, and save the processed result.
 
-The project focuses on basic image processing techniques such as image resizing, smoothing filters, edge detection, and texture analysis. It was designed as a practical C programming project to understand how pixel values are stored, accessed, modified, and processed through matrices.
+The project focuses on fundamental image processing techniques such as image resizing, smoothing filters, edge detection, and texture analysis. It was designed as a practical C programming project to understand how pixel values are stored, accessed, modified, and processed using two-dimensional arrays.
 
 ## Technologies Used
 
@@ -13,9 +13,19 @@ The project focuses on basic image processing techniques such as image resizing,
 - PGM Image Format
 - GCC Compiler
 
+## Project Structure
+
+```text
+image-processing-application-c
+├── .gitignore
+├── README.md
+└── src
+    └── image_processing_application.c
+```
+
 ## Features
 
-- Load ASCII PGM images in P2 format
+- Load grayscale PGM images in ASCII P2 format
 - Save processed images in PGM format
 - Zoom images using nearest-neighbor scaling
 - Shrink images using block averaging
@@ -28,15 +38,6 @@ The project focuses on basic image processing techniques such as image resizing,
 - Compute Local Binary Pattern values for texture analysis
 - Use a text-based interactive menu
 
-## Project Structure
-
-```text
-image-processing-application-c
-├── README.md
-└── src
-    └── image_processing_application.c
-```
-
 ## Implemented Image Processing Operations
 
 ### 1. PGM Image Loading
@@ -47,9 +48,9 @@ The program loads grayscale images in ASCII PGM P2 format. It reads the image wi
 
 The application supports both zooming and shrinking operations.
 
-Zooming is implemented using nearest-neighbor interpolation. For example, when the image is zoomed by a factor of 2, each original pixel is expanded into a larger block.
+Zooming is implemented using nearest-neighbor scaling. When the image is zoomed by a factor of 2 or 3, each original pixel is expanded into a larger block.
 
-Shrinking is implemented by averaging blocks of pixels. For example, when the image is reduced by a factor of 2, each 2 by 2 pixel block is converted into one representative pixel value.
+Shrinking is implemented by averaging blocks of pixels. When the image is reduced by a factor of 2 or 4, each block of pixels is converted into one representative pixel value.
 
 ### 3. Image Filtering
 
@@ -103,7 +104,7 @@ image_processing_application.exe
 
 ## Program Menu
 
-The application uses a text-based menu:
+The application uses the following text-based menu:
 
 ```text
 1 - Load Image(PGM)
@@ -127,6 +128,13 @@ The user selects an operation from the menu, applies it to the loaded image, and
 6. Select `5` to compute Local Binary Pattern values.
 7. Select `6` to save the processed image.
 8. Select `0` to exit the program.
+
+## Notes
+
+- The program supports ASCII PGM P2 images.
+- The maximum image size is limited to 512 by 512 pixels.
+- The program checks whether an image is loaded before applying processing operations.
+- The `.gitignore` file is used to keep unnecessary compiled files and temporary files out of the repository.
 
 ## Purpose of the Project
 
